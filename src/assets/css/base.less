@@ -1,0 +1,513 @@
+/**
+ *  样式表文件
+ */
+@EDEDED: #EDEDED;
+@2DC3E8: #2DC3E8;
+@FFFFFF: #FFFFFF;
+@F3F3F3: #F3F3F3;
+@mainColor:#409EFF;
+
+/**
+ *  全局颜色控制
+ */
+.bodyBG {
+    background: @EDEDED;
+}
+
+.headerBG {
+    background: @2DC3E8
+}
+
+.barBG {
+    background: @FFFFFF
+}
+
+/**
+ *  全局清空margin padding
+ */
+* {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    text-decoration: none;
+}
+
+/**
+ *  body,html 盒子区域
+ */
+body {
+    border: none;
+    font-family: '微软雅黑';
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+html,
+body,
+#app,
+.init {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/**
+ *  布局样式
+ */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-content {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-0-auto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.auto {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/**
+ *  全局小部件样式
+ */
+.shadow {
+    box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.shade {
+    >.contentDialog {
+        background-color: white;
+
+        >.title {
+            height: 60px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: var(@mainColor);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+
+            >span {
+                font-size: 15px;
+                float: left;
+                color: white;
+            }
+
+            >img {
+                float: right;
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
+            }
+        }
+
+        >.content {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            bottom: 60px;
+            left: 0;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        >.contentNoBtn {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        >.button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid #e6e6e6;
+            background-color: #f6f6f6;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+}
+
+
+.lt_table {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    >.condition {
+        width: calc(100% - 15px);
+        min-height: 60px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 15px 15px 0 0;
+
+        .el-form-item {
+
+            .el-form-item__label {
+                margin-left: 15px;
+                font-size: 15px;
+                color: #222222;
+                font-weight: normal;
+            }
+
+            .el-input {
+                width: auto;
+            }
+
+            .small {
+                width: 120px;
+            }
+
+            .big {
+                width: 250px;
+            }
+
+            .el-select {
+                width: 180px;
+            }
+
+            .el-button {
+                height: 40px;
+                min-width: 75px;
+            }
+
+            .el-radio-button__inner {
+                border: 0;
+                border-radius: 20px;
+                box-shadow: none;
+            }
+
+            .el-radio-button {
+                margin: 0 6px;
+            }
+
+        }
+
+        .formBtns {
+            float: right;
+            margin-right: 0;
+        }
+    }
+
+    >.topInfo {
+        height: 60px;
+        width: calc(100% - 30px);
+        margin-top: 10px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 8px;
+        padding: 0 15px;
+
+        .rightInfo {
+            display: flex;
+
+            div {
+                display: flex;
+                align-items: center;
+                height: 30px;
+                font-size: 16px;
+                margin-right: 20px;
+                padding: 0 5px;
+                border-bottom: solid 2px white;
+
+                span {
+                    display: inline-block;
+                    font-size: 10px;
+                    margin-left: 6px;
+                    padding: 0 8px;
+                    border-radius: 9px;
+                    color: var(@mainColor);
+                    background-color: rgba(73, 136, 253, 0.09);
+                }
+            }
+
+            .active {
+                color: var(@mainColor);
+                border-bottom: solid 2px var(@mainColor);
+            }
+        }
+
+        .infoBtn {
+            .el-button {
+                height: 40px;
+                min-width: 75px;
+            }
+        }
+    }
+
+    >.tableArea {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+
+        >.el-table {
+            border-radius: 8px;
+
+            >.el-table__header-wrapper {
+                background-color: #F6F6F6;
+                height: 50px;
+
+                .el-checkbox__inner {
+                    height: 17px;
+                    width: 17px;
+                }
+
+                .el-checkbox__inner::after {
+                    width: 5px !important;
+                    left: 5px !important;
+                    height: 9px !important;
+                }
+
+                th {
+                    height: 100%;
+                    background-color: #F6F6F6;
+                    color: #333333;
+                    font-size: 15px;
+                    font-weight: normal;
+                }
+
+                th:not(.is-leaf) {
+                    text-align: center;
+                }
+            }
+
+            >.el-table__body-wrapper {
+                height: calc(100% - 50px);
+                padding-right: 16px;
+                overflow: auto;
+
+                .el-checkbox__inner::after {
+                    width: 5px !important;
+                    left: 5px !important;
+                    height: 9px !important;
+                }
+
+                td {
+                    height: 55px;
+                    padding: 7px 0;
+                }
+
+                .el-checkbox__inner {
+                    height: 17px;
+                    width: 17px;
+                }
+            }
+        }
+
+        >.page {
+            display: flex;
+            justify-content: flex-end;
+
+            >.el-pagination {
+                margin-top: 10px;
+                padding: 0;
+
+                .el-icon {
+                    font-size: 14px;
+                    color: #9FADBD;
+                }
+
+                >button {
+                    width: 50px;
+                    height: 45px;
+                    background: white;
+                    border-radius: 3px;
+                    padding: 0;
+                    margin-right: 10px;
+                }
+
+                >.el-pager {
+                    >li {
+                        width: 50px;
+                        height: 45px;
+                        line-height: 45px;
+                        background: white;
+                        border-radius: 3px;
+                        padding: 0;
+                        text-align: center;
+                        margin-right: 10px;
+                        font-size: 14px;
+                        color: #9FADBD;
+                    }
+
+                    >li.active {
+                        color: white;
+                        background: var(@mainColor);
+                    }
+                }
+
+                >.el-pagination__sizes {
+                    min-width: 60px;
+                    height: 45px;
+                    background: white;
+                    border-radius: 3px;
+                    font-size: 14px !important;
+
+                    >.el-select {
+                        height: 100%;
+                        width: 100%;
+
+                        >.el-input {
+                            height: 100%;
+                            margin: 0;
+
+                            input {
+                                height: 100%;
+                                line-height: 45px;
+                                border: none;
+                                padding: 0 12px 0 0;
+                                font-size: 14px;
+                                color: #9FADBD;
+                            }
+                        }
+                    }
+                }
+
+                .el-pagination__total {
+                    height: 45px;
+                    line-height: 45px;
+                    background: white;
+                    border-radius: 3px;
+                    padding: 0 15px;
+                    font-size: 14px;
+                    color: #9FADBD;
+                }
+
+                >.el-pagination__jump {
+                    height: 45px;
+                    line-height: 45px;
+                    background: white;
+                    border-radius: 3px;
+                    padding: 0 15px;
+                    margin: 0;
+                    font-size: 14px;
+                    color: #9FADBD;
+
+                    >.el-input {
+                        width: 35px;
+
+                        >input {
+                            height: 22px;
+                            margin-top: 5px;
+                            color: #9FADBD;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.el-dialog__header {
+    background-color: @mainColor !important;
+    padding: 10px 20px 10px !important;
+
+    .el-dialog__title {
+        color: @FFFFFF !important;
+    }
+
+    .el-dialog__close {
+        color: @FFFFFF !important;
+    }
+
+    .el-dialog__headerbtn {
+        top: 16px;
+    }
+}
+
+.header-logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-operations {
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+    height: 100%;
+
+    & li {
+        color: #333;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 10px;
+        margin: 0 10px;
+        line-height: 80px;
+        cursor: pointer;
+
+        &:last-child {
+            cursor: default;
+        }
+    }
+
+    .header-download {
+        opacity: 0.4;
+        cursor: default;
+
+        &.is-available {
+            opacity: 1;
+            cursor: pointer;
+        }
+    }
+
+    span {
+        opacity: 0.7;
+    }
+
+    .header-lang {
+        cursor: pointer;
+
+        &.is-active {
+            opacity: 1;
+        }
+    }
+}
+
+.header-operations::after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle
+}
